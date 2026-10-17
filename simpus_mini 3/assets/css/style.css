@@ -1,0 +1,140 @@
+/* ===== Reset & Body ===== */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #f5f6f8;
+  color: #2b2f33;
+  line-height: 1.6;
+}
+a { color: #1d5b8a; text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+/* ===== Header & Navbar (Flexbox) ===== */
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1rem;
+  padding: 1rem 2rem;
+  background-color: #1d5b8a;
+  color: #fff;
+}
+header h1 { font-size: 1.4rem; }
+header nav ul { display: flex; gap: 1.25rem; list-style: none; }
+header nav a { color: #fff; }
+.nav-toggle-label {
+  display: none;
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 1.6rem;
+  cursor: pointer;
+}
+.auth-status { display: flex; align-items: center; gap: 0.75rem; color: #fff; }
+.auth-status a { color: #fff; text-decoration: underline; }
+
+/* ===== Main & Section (kartu putih) ===== */
+main { max-width: 960px; margin: 1.5rem auto; padding: 0 1rem; }
+section {
+  background-color: #fff;
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+}
+section h2 { margin-bottom: 1rem; color: #1d5b8a; }
+
+/* ===== Kartu Statistik (Grid) ===== */
+.stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; }
+.stats article {
+  background-color: #eef4fa;
+  padding: 1rem;
+  border-radius: 8px;
+  text-align: center;
+}
+.stats article h3 { font-size: 0.95rem; color: #555; }
+.stats article p { font-size: 2rem; font-weight: bold; color: #1d5b8a; }
+
+/* ===== Tabel ===== */
+.table-responsive { overflow-x: auto; }
+table { width: 100%; border-collapse: collapse; }
+th, td { text-align: left; padding: 0.65rem 0.75rem; border-bottom: 1px solid #e2e6ea; }
+thead { background-color: #1d5b8a; color: #fff; }
+tbody tr:nth-child(even) { background-color: #f7f9fb; }
+tbody tr:hover { background-color: #eef4fa; }
+td button, td a.btn-edit {
+  padding: 0.35rem 0.7rem;
+  margin-right: 0.35rem;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.85rem;
+  color: #fff;
+}
+td a.btn-edit { display: inline-block; background-color: #f0ad4e; }
+td button.btn-delete { background-color: #d9534f; }
+td form.form-hapus { display: inline; }
+
+/* ===== Form ===== */
+form label { font-weight: bold; }
+form input[type="text"], form input[type="number"], form input[type="password"], form select {
+  width: 100%;
+  max-width: 420px;
+  padding: 0.5rem;
+  margin-top: 0.25rem;
+  border: 1px solid #cdd4da;
+  border-radius: 4px;
+  font-size: 1rem;
+}
+form button[type="submit"] {
+  padding: 0.55rem 1.2rem;
+  margin-right: 0.5rem;
+  border: none;
+  border-radius: 4px;
+  background-color: #1d5b8a;
+  color: #fff;
+  cursor: pointer;
+}
+form p { margin-bottom: 0.9rem; }
+
+/* ===== Error Validasi (JS) ===== */
+.error { display: block; color: #d9534f; font-size: 0.85rem; margin-top: 0.25rem; }
+
+/* ===== Flash Message ===== */
+.flash { padding: 0.75rem 1rem; border-radius: 6px; margin-bottom: 1rem; font-weight: 500; }
+.flash-success { background-color: #d4edda; color: #155724; }
+.flash-error { background-color: #f8d7da; color: #721c24; }
+
+/* ===== Pencarian & Pagination ===== */
+.search-box { margin-bottom: 1rem; }
+.search-box form { display: flex; gap: 0.5rem; align-items: flex-end; }
+.search-box input { width: 100%; }
+.search-box button {
+  padding: 0.55rem 1.2rem;
+  border: none;
+  border-radius: 4px;
+  background-color: #1d5b8a;
+  color: #fff;
+  cursor: pointer;
+}
+.pagination { display: flex; gap: 0.5rem; margin-top: 1rem; flex-wrap: wrap; }
+.pagination a { padding: 0.4rem 0.75rem; border: 1px solid #cdd4da; border-radius: 4px; color: #1d5b8a; }
+.pagination a.active { background-color: #1d5b8a; color: #fff; border-color: #1d5b8a; }
+
+/* ===== Footer ===== */
+footer { text-align: center; padding: 1.5rem; color: #6b7379; font-size: 0.9rem; }
+
+/* ===== Responsive (desktop-first) ===== */
+@media (max-width: 768px) {
+  .stats { grid-template-columns: repeat(2, 1fr); }
+  .nav-toggle-label { display: block; }
+  header nav { display: none; width: 100%; }
+  header nav.nav-open { display: block; }
+  header nav ul { flex-direction: column; gap: 0.5rem; }
+}
+@media (max-width: 480px) {
+  header { padding: 0.75rem 1rem; }
+  .stats { grid-template-columns: 1fr; }
+  section { padding: 1rem; }
+}
